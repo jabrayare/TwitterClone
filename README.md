@@ -1,5 +1,5 @@
 ### TwitterClone
-# This is a full-stack Twitter Clone built with HTML, CSS, Javascript, Python, Django, and PostgreSQL.
+This is a full-stack Twitter Clone built with HTML, CSS, Javascript, Python, Django, and PostgreSQL.
 ## Some of its functionalities include:
   - Users can create accounts.
   - They can log in.
