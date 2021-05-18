@@ -118,3 +118,6 @@ GitHub.sublime-settings
 #Don't wanna push ckeditor.
 
 static/ckeditor
+
+#Don't wanna push my setting.py file.
+settings.py
