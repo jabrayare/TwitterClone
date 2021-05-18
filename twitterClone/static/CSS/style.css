@@ -1,0 +1,533 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #15202b;
+    display: flex;
+    color: #ffffff;
+    width: 80%;
+    justify-content: center;
+    margin: auto;
+}
+
+.twitter-icon {
+    margin: 10px;
+}
+
+.twitter-icon a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.twitter-icon a:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.left {
+    display: flex;
+    width: 300px;
+    border-right: 1px solid #38444D;
+    height: 100vh;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+}
+
+.icons-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.icons-left a {
+    text-decoration: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.home-icon {
+    display: flex;
+    align-items: center;
+    padding: 4px 10px;
+    margin-bottom: 10px;
+}
+
+.home-icon:hover {
+    background-color: #182D3F;
+    opacity: 0.7;
+    border-radius: 20px;
+    color: #1da1f2;
+    cursor: pointer;
+}
+
+.home-text {
+    padding-left: 20px;
+    font-size: 16px;
+    font-weight: 800;
+    font-family: "Andika New Basic", sans-serif;
+}
+
+.btn-main {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #1da1f2;
+    color: #ffffff;
+    font-size: 13px;
+    font-family: "Andika New Basic", sans-serif;
+    font-weight: 800;
+    margin-right: 10px;
+}
+
+.btn-main:hover {
+    cursor: pointer;
+    background-color: #182D3F;
+    color: #1da1f2;
+    opacity: 0.8;
+}
+
+.main {
+    width: 600px;
+    border-right: 1px solid #38444D;
+    text-align: left;
+}
+
+.main .home {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 800;
+    font-family: "Andika New Basic", sans-serif;
+}
+
+.tweet-section {
+    width: 100%;
+    display: flex;
+    /* align-items: center; */
+    padding: 10px;
+    border-top: 1px solid #38444D;
+    border-bottom: 1px solid #38444D;
+}
+
+.user-profile a>img {
+    width: 50px;
+    height: 50px;
+}
+
+.user-profile {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    border: none;
+    border-radius: 50%;
+    border: 3px solid #15202b;
+}
+
+
+/* Start of user footer */
+
+.user_footer {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    /* Hide this one for now*/
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 10px;
+    transition: all 0.6s ease-in-out;
+}
+
+.user_footer:hover {
+    background-color: #173b5b;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.user_footer_img img {
+    width: 50px;
+    height: 50px;
+}
+
+.user_footer_img {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    border: none;
+    border-radius: 50%;
+    /* padding-right: 10px; */
+}
+
+.user_footer_info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+}
+
+.user_footer_info h3 {
+    font-size: 0.9rem;
+}
+
+
+/* end of user footer */
+
+
+/* Start of user footer modal */
+
+.user_footer_modal {
+    position: absolute;
+    bottom: 70px;
+    right: 10px;
+    width: 100%;
+    color: #ffffff;
+    display: none;
+    background-color: #15202b;
+    Box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    padding: 5px 2px 10px 2px;
+}
+
+.user_content_all .check {
+    color: #1b95e0;
+}
+
+.user_footer_modal .user_footer_full {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #173b5b;
+}
+
+.user_content_all {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user_footer_full {
+    display: flex;
+    align-items: center;
+}
+
+.user_footer_content {
+    display: flex;
+    align-items: center;
+}
+
+.user_footer_modal a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.user_footer_modal .existing_acount {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #173b5b;
+}
+
+.user_footer_modal .existing_acount:hover {
+    cursor: pointer;
+    background-color: #263b54;
+}
+
+.user_footer_modal .log_out:hover {
+    cursor: pointer;
+    background-color: #263b54;
+}
+
+
+/* End of user footer modal */
+
+.tweet-text {
+    padding-top: 10px;
+    width: 100%;
+}
+
+.tweet-text input {
+    border: none;
+    background-color: transparent;
+    padding-left: 10px;
+    font-size: 16px;
+    font-weight: 800;
+    font-family: "Andika New Basic", sans-serif;
+    width: 100%;
+    color: #ffffff;
+    padding-bottom: 20px;
+}
+
+.tweet-text input:focus {
+    outline: none;
+}
+
+hr {
+    border: 1px solid #38444D;
+    width: 100%;
+}
+
+.files {
+    width: 100%;
+    color: #1da1f2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.send-tweet {
+    padding: 5px 15px;
+    border: none;
+    font-family: "Andika New Basic", sans-serif;
+    color: #ffffff;
+    border-radius: 20px;
+    background-color: #1b95e0;
+    opacity: 0.5;
+}
+
+.send-tweet:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.input-files i {
+    padding-right: 10px;
+}
+
+.post-tweet {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #38444D;
+    border-bottom: 1px solid #38444D;
+}
+
+.tweet-post-msg {
+    margin-bottom: 10px;
+}
+
+.tweet-post-msg p {
+    position: relative;
+    top: 0;
+    left: 60px;
+    right: 10px;
+    margin-bottom: 8px;
+    width: 80%;
+}
+
+.post-tweet-head {
+    display: flex;
+    align-items: center;
+}
+
+.user-header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+.user-header .username {
+    font-size: 15px;
+    font-weight: 600;
+    padding-right: 5px;
+}
+
+.user-header i {
+    padding-right: 5px;
+    color: #1b95e0;
+}
+
+.user-header .user-email,
+.hour-ago {
+    color: #3d5466
+}
+
+.hour-ago {
+    padding-left: 5px;
+}
+
+.post-tweet-footer {
+    display: flex;
+    justify-content: space-around;
+    color: #3d5466;
+}
+
+.post-tweet-footer i .count {
+    padding-left: 10px;
+}
+
+.tweet-post-img {
+    width: 80%;
+    position: relative;
+    top: 0;
+    left: 60px;
+    Box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 20px;
+    /* height: 400px; */
+    margin-bottom: 10px;
+}
+
+.tweet-post-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: none;
+    border-radius: 20px;
+    border: 1px solid #38444D;
+}
+
+.right {
+    width: 400px;
+    height: 100vh;
+}
+
+.search {
+    width: 280px;
+    padding: 6px 20px;
+    background-color: #253341;
+    font-family: "Andika New Basic", sans-serif;
+    border-radius: 20px;
+    margin: 10px;
+    color: #6b7d8c;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+}
+
+.search input {
+    color: #6b7d8c;
+    padding-left: 5px;
+    border: none;
+    background-color: #253341;
+    font-family: "Andika New Basic", sans-serif;
+    color: #ffffff;
+}
+
+.search input:focus {
+    outline: none;
+}
+
+.right-side {
+    position: relative;
+    top: 50px;
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    background-color: #192734;
+    border-radius: 5px;
+}
+
+.side-header p {
+    font-family: Verdana, Tahoma, 'Segoe UI', Geneva, sans-serif;
+    color: #ffffff;
+    margin-bottom: 7px;
+}
+
+.side-news-header {
+    margin-top: 8px;
+    margin-bottom: 4px;
+    display: flex;
+    color: #3d5466
+}
+
+.side-news h4 {
+    color: #ffffff;
+    font-family: Verdana, Tahoma, 'Segoe UI', Geneva, sans-serif;
+    font-size: 0.8rem;
+    font: weight 100;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.side-news .side-news-post {
+    width: 67%;
+    color: #ffffff;
+    font-family: Verdana, Tahoma, 'Segoe UI', Geneva, sans-serif;
+    font-size: 0.8rem;
+    font: weight 100;
+    margin-bottom: 8px;
+    position: relative;
+    top: -70px;
+}
+
+.side-news-main {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.side-news-main img {
+    position: relative;
+    top: 5px;
+    right: -10px;
+    width: 90px;
+    object-fit: contain;
+    border-radius: 20px;
+    border: 1px solid #38444D;
+}
+
+.user_card {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d7dee3;
+    width: 100%;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.right-side h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: Verdana, Tahoma, 'Segoe UI', Geneva, sans-serif;
+    color: #ffffff;
+}
+
+.user_card_info {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.name_and_icon {
+    display: flex;
+}
+
+.name_and_icon i {
+    color: #1b95e0;
+    margin-left: 4px;
+}
+
+.user-email {
+    font-family: Verdana, Tahoma, 'Segoe UI', Geneva, sans-serif;
+    font-size: 0.8rem;
+    color: #686c6e;
+    margin-top: 3px;
+}
+
+.send-tweet {
+    border: none;
+    padding: 8px 16px;
+    background-color: transparent;
+    border: 1px solid #1b95e0;
+    color: #1b95e0;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-left: 30px;
+}
+
+.right-side a {
+    text-decoration: none;
+    color: #1da1f2;
+    font-size: 0.7rem;
+    font-weight: 200;
+    font-family: Verdana, Tahoma, 'Segoe UI', Geneva, sans-serif;
+}
+
+.right-side {
+    padding-bottom: 20px;
+}

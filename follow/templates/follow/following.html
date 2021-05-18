@@ -1,0 +1,206 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'CSS/following.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>people followed by {{ user}}</title>
+</head>
+
+<body>
+    <div class="left">
+
+        <div class="twitter-icon">
+            <a href="{% url 'home' %}">
+                <i class="fab fa-twitter fa-2x"></i>
+            </a>
+        </div>
+        <div class="icons-left">
+            <a href="{% url 'home' %}">
+                <div class="home-icon">
+                    <i class="fas fa-home"></i>
+                    <p class="home-text">Home</p>
+                </div>
+            </a>
+            <div class="home-icon">
+                <i class="fas fa-hashtag"></i>
+                <p class="home-text">Explore</p>
+            </div>
+            <div class="home-icon">
+                <i class="fas fa-bell"></i>
+                <p class="home-text">Notifications</p>
+            </div>
+            <div class="home-icon">
+                <i class="far fa-envelope"></i>
+                <p class="home-text">Messages</p>
+            </div>
+            <div class="home-icon">
+                <i class="far fa-bookmark"></i>
+                <p class="home-text">Bookmarks</p>
+            </div>
+            <div class="home-icon">
+                <i class="fas fa-list-ul"></i>
+                <p class="home-text">Lists</p>
+            </div>
+            <div class="home-icon">
+                <i class="far fa-user"></i>
+                <p class="home-text">Profile</p>
+            </div>
+            <div class="home-icon">
+                <i class="fas fa-ellipsis-h"></i>
+                <p class="home-text">More</p>
+            </div>
+            <button class="btn-main">Tweet</button>
+        </div>
+    </div>
+    </div>
+    <div class="main">
+        <div class="home">
+            <a href="{% url 'userprofile' %}"><i class="fas fa-long-arrow-alt-left"></i></a>
+            <div class="user_name">
+                <h2>{{userprofile.first_name}} {{userprofile.last_name}}</h2>
+                <p>@{{userprofile.user}}</p>
+            </div>
+        </div>
+        <div class="follow_header">
+            <a href="{% url 'followers' %}" class="followers">Followers</a>
+            <a href="{% url 'following' %}" class="following">Following</a>
+        </div>
+        <!-- Generating requests sent by this user-->
+        {% if following %} {% for following in following %}
+        <div class="user_card_all">
+            <div class="user_card">
+                <div class="user_card_info">
+                    <div class="user-profile">
+                        <img src="{{ following.follow_profile.user_image.url}}" alt="">
+                    </div>
+                    <div class="username_info">
+                        <div class="name_and_icon">
+                            <p>{{ following.follow_profile.first_name}}</p>
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <p class="user-email">@{{following.follow_profile.user.username}}</p>
+                    </div>
+                </div>
+                <button class="send-tweet">Following</button>
+            </div>
+            <p class="bio">{{ following.follow_profile.bio}}</p>
+        </div>
+        {%endfor%} {%endif%}
+        <!-- Generating requests send by another user -->
+        {% if following_request %} {% for following_request in following_request %}
+        <div class="user_card_all">
+            <div class="user_card">
+                <div class="user_card_info">
+                    <div class="user-profile">
+                        <img src="{{ following_request.user_profile.user_image.url}}" alt="">
+                    </div>
+                    <div class="username_info">
+                        <div class="name_and_icon">
+                            <p>{{ following_request.user_profile.first_name}}</p>
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <p class="user-email">@{{following_request.user_profile.first_name}}</p>
+                        <p class="user-email">requested to follow you</p>
+                    </div>
+                </div>
+                <form method="POST" action="{% url 'following' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input name="following_id" type="text" value="{{following_request.id}}" hidden>
+                    <button type="submit" class="send-tweet">Accept Request</button>
+                </form>
+            </div>
+            <p class="bio">{{ following_request.user_profile.bio}}</p>
+        </div>
+        {%endfor%} {%endif%}
+
+    </div>
+    <div class="right">
+        <form action="">
+            <div class="search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search Twitter">
+            </div>
+        </form>
+        <div class="right-side">
+            <div class="side-header">
+                <p>What's happening?</p>
+            </div>
+            <hr>
+            <div class="side-news">
+                <div class="side-news-header">
+                    <p>Television</p>
+                    <p>. LIVE </p>
+                </div>
+                <h4>It's time to meet the bachelors' families as Tayshia does hometowns this week on The Bachelorette</h4>
+            </div>
+            <hr>
+            <div class="side-news">
+                <div class="side-news-main">
+                    <div class="side-news-header">
+                        <p>Television</p>
+                        <p>. LIVE </p>
+                    </div>
+                    <img src="{% static '/images/me2.jpeg' %}" alt="">
+                </div>
+
+                <h4 class="side-news-post">It's time to meet the bachelors' families as Tayshia does hometowns this week on The Bachelorette</h4>
+
+            </div>
+            <hr>
+            <div class="side-news">
+                <div class="side-news-header">
+                    <p>Television</p>
+                    <p>. LIVE </p>
+                </div>
+                <h4>It's time to meet the bachelors' families as Tayshia does hometowns this week on The Bachelorette</h4>
+            </div>
+            <hr>
+            <div class="side-news">
+                <div class="side-news-main">
+                    <div class="side-news-header">
+                        <p>Television</p>
+                        <p>. LIVE </p>
+                    </div>
+                    <img src="{% static '/images/me2.jpeg' %}" alt="">
+                </div>
+
+                <h4 class="side-news-post">It's time to meet the bachelors' families as Tayshia does hometowns this week on The Bachelorette</h4>
+                <hr>
+            </div>
+            <div class="side-news">
+                <div class="side-news-header">
+                    <p>Television</p>
+                    <p>. LIVE </p>
+                </div>
+                <h4>It's time to meet the bachelors' families as Tayshia does hometowns this week on The Bachelorette</h4>
+            </div>
+            <hr>
+            <div class="side-news">
+                <div class="side-news-main">
+                    <div class="side-news-header">
+                        <p>Television</p>
+                        <p>. LIVE </p>
+                    </div>
+                    <img src="{% static '/images/me2.jpeg' %}" alt="">
+                </div>
+
+                <h4 class="side-news-post">It's time to meet the bachelors' families as Tayshia does hometowns this week on The Bachelorette</h4>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<!-- {% for following in following %}
+    <p>{{following.follow_user.first_name}}</p>
+    <p>{{following.follow_user.last_name}}</p>
+    <p>{{following.follow_user.bio}}</p>
+    {% endfor %} -->

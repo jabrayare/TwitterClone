@@ -1,0 +1,186 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    width: 100%;
+}
+
+.left {
+    width: 50%;
+    /* background-image: url("me2.jpeg"); */
+    /* color: #ffffff; */
+    display: grid;
+    place-items: center;
+    background-image: url("./images/twitterbackground.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.left-content-info {
+    position: absolute;
+    top: 300px;
+    left: 170px;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    font-family: Geneva, Tahoma, sans-serif;
+    z-index: 20;
+}
+
+.left::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0.8;
+    width: 50%;
+    z-index: 3;
+}
+
+.left-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    color: #ffffff;
+    z-index: 10;
+}
+
+.left-content i {
+    font-size: 15px;
+    font-weight: 700;
+    padding-right: 0.4rem;
+}
+
+.right {
+    width: 50%;
+    background-color: #15212B;
+    height: 100vh;
+}
+
+.right p {
+    text-align: center;
+    color: #2099E4;
+    font-size: 0.8rem;
+    font-weight: 100;
+    font-family: Geneva, Tahoma, sans-serif;
+}
+
+form {
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+}
+
+.user-fields {
+    border: 1px solid #3E5465;
+    padding: 2px;
+    margin-right: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.user-fields p {
+    font-size: 0.8rem;
+    color: #5c7080;
+    text-align: left;
+}
+
+.user-fields input {
+    border: none;
+    background-color: #15212B;
+    padding: 5px;
+    color: #ffffff;
+    width: 100%;
+}
+
+.user-fields input:focus {
+    outline: none;
+}
+
+.login-btn {
+    color: #2099E4;
+    border: 1px solid #2099E4;
+    border-radius: 20px;
+    background-color: transparent;
+    padding: 0px 20px;
+    width: 100px;
+}
+
+.login-btn:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.user-fields-top {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+}
+
+.section-left-main {
+    display: grid;
+    place-items: center;
+    height: 60vh;
+    width: 50%;
+    margin: auto;
+}
+
+.section-main i {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.section-main i:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.section-main h1 {
+    color: #ffffff;
+    font-family: Geneva, Tahoma, sans-serif;
+    margin-bottom: 40px;
+}
+
+.section-main h6 {
+    color: #ffffff;
+    font-family: Geneva, Tahoma, sans-serif;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.twitter-signup-login {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.signup-btn,
+.login-s-btn {
+    background-color: #2099E4;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.login-s-btn {
+    background-color: transparent;
+    color: #2099E4;
+    border: 1px solid #2099E4;
+}

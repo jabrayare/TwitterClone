@@ -1,0 +1,6 @@
+{
+  "workbench.colorTheme": "Monokai",
+  "workbench.preferredDarkColorTheme": "Kimbie Dark",
+  "python.pythonPath": "/usr/bin/python3",
+  "html.format.templating": true
+}

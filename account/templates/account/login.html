@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'CSS/login.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login on Twitter / Twitter</title>
+</head>
+
+<body>
+    <section class="login-section">
+        <div class="section-login-main">
+            <i class="fab fa-twitter fa-2x"></i>
+            <h4>Login in to Twitter</h4>
+            <div class="form">
+                <form method="POST" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <div class="user-fields-top">
+                        <div class="user-fields">
+                            <p>Phone,email,or username</p>
+                            <input type="text" name="username" id="">
+                        </div>
+                        <div class="user-fields">
+                            <p class="pass">Password</p>
+                            <input type="password" name="password" id="">
+                        </div>
+                    </div>
+                    <button class="login-btn">Log in</button>
+                </form>
+                <div class="forgot-pass">
+                    <p>Forgot password?</p>
+                    <p><span class="dot">.</span><a href="{% url 'register' %}">Sign up for Twitter</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

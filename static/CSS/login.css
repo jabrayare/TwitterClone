@@ -1,0 +1,100 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    background-color: #15212B;
+}
+
+.login-section {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.section-login-main {
+    width: 35%;
+}
+
+.section-login-main i {
+    color: #ffffff;
+    margin: 10px;
+}
+
+.section-login-main h4 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 0.9rem;
+    font-family: Geneva, Tahoma, sans-serif;
+    margin-bottom: 5px;
+}
+
+.user-fields {
+    border: 1px solid #3E5465;
+    padding: 2px 60px 2px 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: left;
+}
+
+.user-fields p {
+    font-size: 0.8rem;
+    color: #5c7080;
+}
+
+.login-btn {
+    background-color: #2099E4;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.8rem;
+    width: 100%;
+}
+
+.user-fields input {
+    border: none;
+    background-color: #15212B;
+    color: #ffffff;
+}
+
+.user-fields input:focus {
+    outline: none;
+}
+
+.forgot-pass {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forgot-pass p {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: #2099E4;
+    font-size: 0.8rem;
+    font-weight: 100;
+    font-family: Geneva, Tahoma, sans-serif;
+    padding-right: 4px;
+}
+
+.forgot-pass p>a {
+    text-decoration: none;
+    color: #2099E4;
+    font-family: Geneva, Tahoma, sans-serif;
+    padding-left: 4px;
+}
+
+.dot {
+    color: #5c7080;
+    text-align: center;
+}

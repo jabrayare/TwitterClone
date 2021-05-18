@@ -1,0 +1,438 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #15202b;
+    display: flex;
+    color: #ffffff;
+    width: 80%;
+    justify-content: center;
+    margin: auto;
+}
+
+.twitter-icon {
+    margin: 10px;
+}
+
+.twitter-icon a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.twitter-icon a:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.left {
+    display: flex;
+    width: 300px;
+    border-right: 1px solid #38444D;
+    height: 100vh;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+}
+
+.icons-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.icons-left a {
+    text-decoration: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.home-icon {
+    display: flex;
+    align-items: center;
+    padding: 4px 10px;
+    margin-bottom: 10px;
+    transition: all 0.4s ease;
+}
+
+.home-icon:hover {
+    background-color: #182D3F;
+    opacity: 0.7;
+    border-radius: 20px;
+    color: #1da1f2;
+    cursor: pointer;
+}
+
+.home-text {
+    padding-left: 20px;
+    font-size: 16px;
+    font-weight: 800;
+    font-family: "Andika New Basic", sans-serif;
+}
+
+.btn-main {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #1da1f2;
+    color: #ffffff;
+    font-size: 13px;
+    font-family: Verdana, Tahoma, 'Segoe UI', Geneva, sans-serif;
+    font-weight: 800;
+    margin-right: 10px;
+}
+
+.main {
+    width: 600px;
+    border-right: 1px solid #38444D;
+    text-align: left;
+}
+
+.main .home {
+    display: flex;
+    align-items: center;
+    padding: 3px 10px 3px 10px;
+    font-size: 16px;
+    font-weight: 800;
+    font-family: Verdana, Tahoma, 'Segoe UI', Geneva, sans-serif;
+}
+
+.user_name {
+    margin-left: 20px;
+}
+
+.user_name h2 {
+    font-size: 0.8rem;
+}
+
+.user_name p {
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: #3d5466;
+    font-family: Verdana, Tahoma, 'Segoe UI', Geneva, sans-serif;
+}
+
+.main .home i {
+    color: #1da1f2;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.main .home i:hover {
+    background-color: #182D3F;
+    opacity: 0.7;
+    border-radius: 20px;
+    color: #1da1f2;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.main .home span {
+    color: #ffffff;
+    margin-left: 20px;
+}
+
+.tweet-section {
+    width: 100%;
+    display: flex;
+    /* align-items: center; */
+    /* padding: 10px; */
+    border-top: 1px solid #38444D;
+    border-bottom: 1px solid #d7dee3;
+}
+
+.cover_main .cover_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-profile img {
+    width: 50px;
+    object-fit: cover;
+    border: none;
+    border-radius: 50%;
+    border: 3px solid #15202b;
+    margin-right: 5px;
+}
+
+.user-main-profile img {
+    width: 100px;
+    object-fit: contain;
+    border: none;
+    border-radius: 50%;
+    border: 3px solid #15202b;
+}
+
+.user-profile .coverImage {
+    width: 100px;
+}
+
+.user-header {
+    display: flex;
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+.user-header .username {
+    font-size: 15px;
+    font-weight: 600;
+    padding-right: 5px;
+}
+
+.user-header i {
+    padding-right: 5px;
+    color: #1b95e0;
+}
+
+.user_info {
+    display: flex;
+    flex-direction: column;
+    margin-top: -60px;
+    padding: 10px;
+}
+
+.user_info_name h2 {
+    font-family: Verdana, Tahoma, 'Segoe UI', Geneva, sans-serif;
+    font-size: 0.4rem;
+    color: #ffffff;
+}
+
+.user_info_name p {
+    font-family: Verdana, Tahoma, 'Segoe UI', Geneva, sans-serif;
+    font-size: 0.6rem;
+    color: #6b7d8c
+}
+
+.user_info_calender {
+    padding: 6px 0;
+}
+
+.user_info .flowers {
+    display: flex;
+    font-family: Verdana, Tahoma, 'Segoe UI', Geneva, sans-serif;
+    font-size: 0.6rem;
+    color: #6b7d8c;
+    margin-bottom: 20px;
+}
+
+.user_info .flowers p {
+    padding-right: 10px;
+}
+
+.user_info .flowers .count {
+    color: #ffffff;
+}
+
+.cover_footer {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}
+
+.btn-main {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #1da1f2;
+    color: #ffffff;
+    font-size: 13px;
+    font-family: "Andika New Basic", sans-serif;
+    font-weight: 800;
+    margin-right: 10px;
+    transition: all 0.4s ease;
+}
+
+.btn-main:hover {
+    cursor: pointer;
+    background-color: #182D3F;
+    color: #1da1f2;
+    opacity: 0.8;
+}
+
+.right {
+    width: 400px;
+    height: 100vh;
+}
+
+.search {
+    width: 280px;
+    padding: 6px 20px;
+    background-color: #253341;
+    font-family: Verdana, Tahoma, 'Segoe UI', Geneva, sans-serif;
+    border-radius: 20px;
+    margin: 10px;
+    color: #6b7d8c;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+}
+
+.search input {
+    color: #6b7d8c;
+    padding-left: 5px;
+    border: none;
+    background-color: #253341;
+    font-family: Verdana, Tahoma, 'Segoe UI', Geneva, sans-serif;
+    color: #ffffff;
+}
+
+.search input:focus {
+    outline: none;
+}
+
+.right-side {
+    /* position: relative; */
+    width: 100%;
+    padding: 10px;
+    background-color: #192734;
+    border-radius: 5px;
+}
+
+.side-header p {
+    font-family: Verdana, Tahoma, 'Segoe UI', Geneva, sans-serif;
+    color: #ffffff;
+    margin-bottom: 7px;
+}
+
+.side-news-header {
+    margin-top: 8px;
+    margin-bottom: 4px;
+    display: flex;
+    color: #3d5466
+}
+
+.side-news h4 {
+    color: #ffffff;
+    font-family: Verdana, Tahoma, 'Segoe UI', Geneva, sans-serif;
+    font-size: 0.8rem;
+    font: weight 100;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.side-news .side-news-post {
+    width: 67%;
+    color: #ffffff;
+    font-family: Verdana, Tahoma, 'Segoe UI', Geneva, sans-serif;
+    font-size: 0.8rem;
+    font: weight 100;
+    margin-bottom: 8px;
+    position: relative;
+    top: -70px;
+}
+
+.side-news-main {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.side-news-main img {
+    position: relative;
+    top: 5px;
+    right: -10px;
+    width: 90px;
+    object-fit: contain;
+    border-radius: 20px;
+    border: 1px solid #38444D;
+}
+
+.user_card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #d7dee3;
+    width: 100%;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.user_card_profile {
+    display: flex;
+    align-items: center;
+}
+
+.user_card_all {
+    border-bottom: 1px solid #d7dee3;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.user_card_all .bio {
+    margin-left: 50px;
+    margin-top: -20px;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    font-weight: 100;
+    font-family: Verdana, Tahoma, 'Segoe UI', Geneva, sans-serif;
+}
+
+.user_card h5 {
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: Verdana, Tahoma, 'Segoe UI', Geneva, sans-serif;
+}
+
+.user_card_info {
+    display: flex;
+    align-items: center;
+}
+
+.right-side h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: Verdana, Tahoma, 'Segoe UI', Geneva, sans-serif;
+    color: #ffffff;
+}
+
+.user_card_info {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.name_and_icon {
+    display: flex;
+}
+
+.name_and_icon i {
+    color: #1b95e0;
+    margin-left: 4px;
+}
+
+.user-email {
+    font-family: Verdana, Tahoma, 'Segoe UI', Geneva, sans-serif;
+    font-size: 0.8rem;
+    color: #686c6e;
+    margin-top: 3px;
+}
+
+.send-tweet {
+    border: none;
+    padding: 8px 16px;
+    background-color: transparent;
+    border: 1px solid #1b95e0;
+    color: #1b95e0;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: -30px;
+}
+
+.right-side a {
+    text-decoration: none;
+    color: #1da1f2;
+    font-size: 0.7rem;
+    font-weight: 200;
+    font-family: Verdana, Tahoma, 'Segoe UI', Geneva, sans-serif;
+}
+
+.right-side {
+    padding-bottom: 20px;
+}

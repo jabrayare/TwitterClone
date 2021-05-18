@@ -1,0 +1,227 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'CSS/userProfile.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/edit_profile_btn.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter | {{user}}'s profile </title>
+</head>
+
+<body>
+    <div class="left">
+
+        <div class="twitter-icon">
+            <a href="{% url 'home' %}">
+                <i class="fab fa-twitter fa-2x"></i>
+            </a>
+        </div>
+        <div class="icons-left">
+            <a href="{% url 'home' %}">
+                <div class="home-icon">
+                    <i class="fas fa-home"></i>
+                    <p class="home-text">Home</p>
+                </div>
+            </a>
+            <div class="home-icon">
+                <i class="fas fa-hashtag"></i>
+                <p class="home-text">Explore</p>
+            </div>
+            <div class="home-icon">
+                <i class="fas fa-bell"></i>
+                <p class="home-text">Notifications</p>
+            </div>
+            <div class="home-icon">
+                <i class="far fa-envelope"></i>
+                <p class="home-text">Messages</p>
+            </div>
+            <div class="home-icon">
+                <i class="far fa-bookmark"></i>
+                <p class="home-text">Bookmarks</p>
+            </div>
+            <div class="home-icon">
+                <i class="fas fa-list-ul"></i>
+                <p class="home-text">Lists</p>
+            </div>
+            <div class="home-icon">
+                <i class="far fa-user"></i>
+                <p class="home-text">Profile</p>
+            </div>
+            <div class="home-icon">
+                <i class="fas fa-ellipsis-h"></i>
+                <p class="home-text">More</p>
+            </div>
+            <button class="btn-main">Tweet</button>
+        </div>
+    </div>
+    </div>
+    <div class="main">
+        <div class="home">
+            <a href="{% url 'home' %}"><i class="fas fa-long-arrow-alt-left"></i></a>
+            <div class="user_name">
+                <h2>{{userprofile.first_name}} {{userprofile.last_name}}</h2>
+                <p>@{{userprofile.user}}</p>
+            </div>
+        </div>
+        <div class="tweet-section">
+            <div class="cover_main">
+                <div class="cover_img">
+                    <img id="cover_img" src="{% static '/images/image1.jpeg' %}" alt="cover image">
+                </div>
+                <div class="modal" id="modal_cover">
+                    <span class="close" id="close_cover">&times;</span>
+                    <img class="profile_pic" id="profile_cover_pic">
+                    <div class="caption" id="caption_cover"></div>
+                </div>
+                <div class="user_info">
+                    <div class="user_info_edit">
+                        <div class="user-main-profile">
+                            <img id="profile_user_pic" src="{{userprofile.user_image.url}}" alt="{{user}}'s profile picture'">
+                        </div>
+                        <div class="edit_profile">
+                            <a href="{% url 'edit_profile' %}" class="btn">Edit Profile</a>
+                        </div>
+                    </div>
+                    <div class="modal" id="modal">
+                        <span class="close" id="close">&times;</span>
+                        <img class="profile_pic" id="profile_pic">
+                        <div class="caption" id="caption"></div>
+                    </div>
+                    <div class="user_info_name">
+                        <h3>{{ userprofile.first_name }} {{ userprofile.last_name }}</h3>
+                        <p>@{{ user.username }}</p>
+                        <p class="user_info_calender"><i class="far fa-calendar-alt"></i> Joined {{ userprofile.created_date }}</p>
+                    </div>
+                    <div class="flowers">
+                        <a href="{% url 'following' %}">
+                            <p><span class="count">{{following_count}}</span> Following</p>
+                        </a>
+                        <a href="{% url 'followers' %}">
+                            <p><span class="count">{{followers_count}}</span> Followers</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="cover_footer">
+                    <p><a href="">Tweets</a></p>
+                    <p><a href="">Tweets & replies </a></p>
+                    <p><a href="">Media</a></p>
+                    <p><a href="">Likes</a></p>
+                </div>
+                <hr>
+            </div>
+
+        </div>
+    </div>
+    <div class="right">
+        <form action="">
+            <div class="search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search Twitter">
+            </div>
+        </form>
+        <div class="right-side">
+            <h5>You Might Like</h5>
+            {% for account in threeUsers %} {% if account.id in follows %}
+            <!-- Don't show up users to be followed if the user already followed and sent friend request. -->
+            {% else %}
+
+            <div class="user_card">
+                <div class="user_card_profile">
+                    <div class="user-profile">
+                        <img src="{{ account.user_image.url }}" alt="">
+                    </div>
+                    <div class="username_info">
+                        <div class="name_and_icon">
+                            <p>{{account.user}}</p>
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <p class="user-email">@{{account.first_name}}{{account.last_name}}</p>
+                    </div>
+                </div>
+                <form method="POST" action="{% url 'userprofile' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input name="follow_user" value="{{ account.first_name }}" type="text" hidden>
+                    <button class="send-tweet" type="submit">Follow</button>
+                </form>
+            </div>
+            {%endif%} {% endfor %}
+            <p><a href="{% url 'userprofile_accounts' %}">Show More</a></p>
+        </div>
+        <div class="right-side">
+            <div class="side-header">
+                <p>What's happening?</p>
+            </div>
+            <hr>
+            <div class="side-news">
+                <div class="side-news-header">
+                    <p>Television</p>
+                    <p>. LIVE </p>
+                </div>
+                <h4>It's time to meet the bachelors' families as Tayshia does hometowns this week on The Bachelorette</h4>
+            </div>
+            <hr>
+            <div class="side-news">
+                <div class="side-news-main">
+                    <div class="side-news-header">
+                        <p>Television</p>
+                        <p>. LIVE </p>
+                    </div>
+                    <img src="{% static '/images/me2.jpeg' %}" alt="">
+                </div>
+
+                <h4 class="side-news-post">It's time to meet the bachelors' families as Tayshia does hometowns this week on The Bachelorette</h4>
+
+            </div>
+            <hr>
+            <div class="side-news">
+                <div class="side-news-header">
+                    <p>Television</p>
+                    <p>. LIVE </p>
+                </div>
+                <h4>It's time to meet the bachelors' families as Tayshia does hometowns this week on The Bachelorette</h4>
+            </div>
+            <hr>
+            <div class="side-news">
+                <div class="side-news-main">
+                    <div class="side-news-header">
+                        <p>Television</p>
+                        <p>. LIVE </p>
+                    </div>
+                    <img src="{% static '/images/me2.jpeg' %}" alt="">
+                </div>
+
+                <h4 class="side-news-post">It's time to meet the bachelors' families as Tayshia does hometowns this week on The Bachelorette</h4>
+                <hr>
+            </div>
+            <div class="side-news">
+                <div class="side-news-header">
+                    <p>Television</p>
+                    <p>. LIVE </p>
+                </div>
+                <h4>It's time to meet the bachelors' families as Tayshia does hometowns this week on The Bachelorette</h4>
+            </div>
+            <hr>
+            <div class="side-news">
+                <div class="side-news-main">
+                    <div class="side-news-header">
+                        <p>Television</p>
+                        <p>. LIVE </p>
+                    </div>
+                    <img src="{% static '/images/me2.jpeg' %}" alt="">
+                </div>
+
+                <h4 class="side-news-post">It's time to meet the bachelors' families as Tayshia does hometowns this week on The Bachelorette</h4>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'JS/app.js' %}"></script>
+</body>
+
+</html>

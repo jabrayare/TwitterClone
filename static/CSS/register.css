@@ -1,0 +1,102 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    background-color: #31414E;
+}
+
+.signup {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.main-signup {
+    width: 400px;
+    background-color: #15202B;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-family: Geneva, Tahoma, sans-serif;
+}
+
+.main-signup h4 {
+    margin-bottom: 15px;
+}
+
+.user-fields {
+    border: 1px solid #3E5465;
+    padding: 2px 60px 2px 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: left;
+}
+
+.user-fields p {
+    font-size: 0.8rem;
+    color: #5c7080;
+}
+
+.login-btn {
+    background-color: #2099E4;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.8rem;
+    width: 100%;
+    padding: 10px;
+}
+
+.user-fields input {
+    border: none;
+    background-color: #15212B;
+    color: #ffffff;
+}
+
+.user-fields input:focus {
+    outline: none;
+}
+
+form>p {
+    font-size: 0.7rem;
+    margin-top: 40px;
+}
+
+.form {
+    padding-bottom: 20px;
+}
+
+.hasAccount {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+
+.hasAccount p {
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: Geneva, Tahoma, sans-serif;
+    padding-right: 5px;
+}
+
+.hasAccount a {
+    text-decoration: none;
+    color: #2099E4;
+}
+
+.hasAccount a:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}

@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="{% static 'CSS/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'https://use.fontawesome.com/releases/v5.13.0/css/all.css' %}" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'CSS/create_profile.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit your profile | Twitter</title>
+</head>
+
+<body>
+    <section class="signup">
+        <div class="main-signup">
+            <h4>Edit Your Profile</h4>
+            <div class="form">
+                <form method="POST" action="{% url 'edit_profile' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="user-fields-top">
+                        <div class="user-fields">
+                            <p>First Name</p>
+                            <input type="text" name="first_name" value="{{ profile.first_name }}" id="">
+                        </div>
+                        <div class="user-fields">
+                            <p>Last Name</p>
+                            <input value="{{ profile.last_name }}" type="text" name="last_name" id="">
+                        </div>
+                        <div class="user-fields">
+                            <p class="pass">email</p>
+                            <input value="{{ profile.email }}" type="email" name="email" id="">
+                        </div>
+                        <div class="user-fields">
+                            <p class="pass">Phone</p>
+                            <input value="{{ profile.phone }}" type="text" name="phone" id="">
+                        </div>
+                        <div class="user-fields">
+                            <p class="pass">Birth date</p>
+                            <input value="{{ profile.birth_date }}" type="date" name="birth_date" id="">
+                        </div>
+                        <div class="user-fields">
+                            <p class="pass">State</p>
+                            <input value="{{ profile.state }}" type="text" name="state" id="">
+                        </div>
+                        <div class="user-fields">
+                            <p class="pass">City</p>
+                            <input value="{{ profile.city }}" type="text" name="city" id="">
+                        </div>
+                        <div class="user-fields">
+                            <p class="pass">Bio</p>
+                            <textarea style="text-align: lef;" value="{{ profile.bio }}" name="bio" rows="8" cols="80" placeholder="{{ profile.bio }}"></textarea>
+                        </div>
+                        <div class="user-fields">
+                            <label class="custom-file-upload">
+                              <input value="{{userprofile.user_image.url}}"  name="user_image" type="file" hidden/>
+                              <i class="fas fa-image fa-2x"><h6>Profile picture</h6></i>
+                            </label>
+                        </div>
+                    </div>
+                    <input type="text" name="user_id" value="{{ user.id }}" id="" hidden>
+                    <button class="login-btn">Update Profile</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="{% static 'JS/all.min.css' %}"></script>
+</body>
+
+</html>

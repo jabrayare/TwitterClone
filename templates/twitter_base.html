@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  {% load static %}
+  <head>
+    <title></title>
+  </head>
+  <head>
+    <link href="{% static 'CSS/all.min.css' %}"
+          rel="stylesheet">
+    <link href="https://fonts.gstatic.com"
+          rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap"
+          rel="stylesheet">
+    <link href="{% static 'CSS/style.css' %}"
+          rel="stylesheet">
+    <link href="{% static 'CSS/userProfile.css' %}"
+          rel="stylesheet">
+    <link href="{% static 'CSS/userprofile_accounts.css' %}"
+          rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0"
+          name="viewport">
+    <title>Twitter Clone | Home</title>
+  </head>
+  <div class="left">
+    <div class="twitter-icon">
+      <a href="{% url 'home' %}"></a>
+    </div>
+    <div class="icons-left">
+      <a href="{% url 'home' %}">
+      <div class="home-icon">
+        <p class="home-text">Home</p>
+      </div></a>
+      <div class="home-icon">
+        <p class="home-text">Explore</p>
+      </div>
+      <div class="home-icon">
+        <p class="home-text">Notifications</p>
+      </div>
+      <div class="home-icon">
+        <p class="home-text">Messages</p>
+      </div>
+      <div class="home-icon">
+        <p class="home-text">Bookmarks</p>
+      </div>
+      <div class="home-icon">
+        <p class="home-text">Lists</p>
+      </div>
+      <div class="home-icon">
+        <a href="{% url 'userprofile' %}"></a>
+        <p class="home-text">Profile</p>
+      </div>
+      <div class="home-icon">
+        <p class="home-text">More</p>
+      </div><button class="btn-main">Tweet</button>
+    </div><!-- user profile footer info -->
+    <div class="user_footer"
+         id="user_footer">
+      <div class="user_footer_full">
+        <div class="user_footer_img"><img alt=""
+             src="{{userprofile.user_image.url}}"></div>
+        <div class="user_footer_info">
+          <h3>{{ userprofile.first_name }}</h3>
+          <p>@{{user.username}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="user_footer_modal"
+         id="user_footer_modal">
+      <div class="user_content_all">
+        <div class="user_footer_content">
+          <div class="user_footer_img"><img alt=""
+               src="{{ userprofile.user_image.url }}"></div>
+          <div class="user_footer_info">
+            <h3>{{userprofile.first_name}} {{userprofile.lastname}}</h3>
+            <p>@{{user.username}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="existing_acount">
+        <a href="{% url 'register' %}">
+        <p>Add an existing account</p></a>
+      </div>
+      <div class="log_out">
+        <a href="{% url 'logout' %}">
+        <p>Log out @{{user.username}}</p></a>
+      </div>
+    </div>
+  </div>{% block content %} <!-- Everything will go in here! -->
+   {% endblock %}
+  <script src="{% static 'JS/all.min.js' %}"></script>
+  <script src="{% static 'JS/modal.js' %}"></script>
+</body>
+</html>
